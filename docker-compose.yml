@@ -31,7 +31,7 @@ services:
       - ./docker/mysql/config:/etc/mysql/conf.d
     environment:
       - MYSQL_ROOT_PASSWORD=securerootpassword
-      - MYSQL_DATABASE=symfony
+      - MYSQL_DATABASE=symfony-db
       - MYSQL_USER=root
       - MYSQL_PASSWORD=root
     ports:
