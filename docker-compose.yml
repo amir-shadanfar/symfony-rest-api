@@ -15,6 +15,10 @@ services:
     restart: always
     ports:
       - "8080:80"
+    networks:
+      backend:
+        aliases:
+          - app
 
   mysql:
     container_name: symfony-mysql
@@ -32,6 +36,10 @@ services:
       - MYSQL_PASSWORD=root
     ports:
       - "3306:3306"
+    networks:
+      backend:
+        aliases:
+          - symfony-mysql-db
 
   phpmyadmin:
     container_name: symfony-phpmyadmin
@@ -41,3 +49,11 @@ services:
       - PMA_HOST=symfony-mysql-db
     ports:
       - "2525:80"
+    networks:
+      backend:
+        aliases:
+          - symfony-mysql-db
+
+networks:
+  backend:
+    name: symfony_net
