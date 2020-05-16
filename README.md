@@ -19,10 +19,12 @@ Artı puan kazandıracak şeyler:
 This project is running on Docker, so after cloning it, you should run this command to start server :
 
     docker-compose up -d
-  ![enter image description here](http://g.recordit.co/fXtpAHgyAf.gif)
+ 
 So, according to project requirement I used Symfony 4.4 to coding. In order to import database and its seeder, you should run these commands :
 
     bin/console doctrine:migration:migrate
     bin/console doctrine:fixtures:load
+
+![enter image description here](http://g.recordit.co/HePmZJhgV7.gif)
 
 Finally you could download exported postman collection from this [link](https://raw.githubusercontent.com/amir-shadanfar/symfony-rest-api/master/Symfony-restfull.postman_collection.json).
