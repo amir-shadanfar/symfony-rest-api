@@ -48,7 +48,7 @@ class Order implements \JsonSerializable
     private $user;
 
     /**
-     * @ORM\OneToOne(targetEntity=Product::class, cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity=Product::class)
      * @ORM\JoinColumn(nullable=false)
      */
     private $product;
@@ -149,6 +149,8 @@ class Order implements \JsonSerializable
             "quantity"      => $this->getQuantity(),
             "address"       => $this->getAddress(),
             "shipping_date" => $this->getShippingDate(),
+            "created_at"    => $this->getCreatedAt(),
+            "updated_at"    => $this->getUpdatedAt(),
             "product"       => $this->getProduct(),
         ];
     }

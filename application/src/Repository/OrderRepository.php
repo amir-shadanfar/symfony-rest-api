@@ -23,11 +23,11 @@ class OrderRepository extends ServiceEntityRepository
      * @param $user_id
      * @return int|mixed|string
      */
-    public function getUserOrders($user_id)
+    public function getUserOrders($user)
     {
         return $this->createQueryBuilder('o')
-            ->andWhere('o.user = :val')
-            ->setParameter('val', $user_id)
+            ->andWhere('o.user = :user')
+            ->setParameter('user', $user)
             ->getQuery()
             ->getResult()
             ;
@@ -36,6 +36,7 @@ class OrderRepository extends ServiceEntityRepository
     public function getUserOrderById($user_id,$order_id)
     {
         return $this->createQueryBuilder('o')
+            ->join('o.product', 'p')
             ->andWhere('o.user = :user_id')
             ->setParameter('user_id', $user_id)
             ->andWhere('o.id = :id')
