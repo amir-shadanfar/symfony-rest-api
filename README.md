@@ -25,4 +25,4 @@ So, according to project requirement I used Symfony 4.4 to coding. In order to i
     bin/console doctrine:migration:migrate
     bin/console doctrine:fixtures:load
 
-Finally you could download exported postman collection from this [link](https://github.com/amir-shadanfar/symfony-rest-api/Symfony-restfull.postman_collection.json).
+Finally you could download exported postman collection from this [link](https://raw.githubusercontent.com/amir-shadanfar/symfony-rest-api/master/Symfony-restfull.postman_collection.json).
